@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AASA,KACE,iDAAkD,CACnD,UAIC,eAAgB,CACjB","file":"app.css","sourcesContent":["// variables\n\n\n// mixins\n\n\n// functions\n\n\nbody {\n  font: 100%/1.5 \"Helvetica Neue\", arial, sans-serif;\n}\n\n\n.grid-7x7 {\n  background: #ccc;\n}"]}
