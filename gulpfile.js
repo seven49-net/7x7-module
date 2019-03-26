@@ -30,16 +30,12 @@ gulp.task('sass', () => {
   return gulp
   .src(vars.sassIn)
   .pipe(sourcemaps.init())
-  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
   .pipe(autoprefixer(vars.autoprefixerOptions))
   .pipe(sourcemaps.write("./"))
   .pipe(gulp.dest(vars.cssOut))
   .pipe(browserSync.stream());
 });
-
-
-
-
 
 
 
@@ -50,6 +46,7 @@ gulp.task('browsersync', () => {
     server: {
       baseDir: "./",
       index: ["index.htm", "index.html"]
+    }
   });
 });
 
