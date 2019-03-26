@@ -1,17 +1,146 @@
 // variables
+$grid-gutter: 2px !default;
+$outline-color: rgba(#fff, 0.8ns) !default;
 
+
+$brand-color: #1381a1 !default;
+$brand-color-alpha: rgba($brand-color, 0.5) !default;
 
 // mixins
 
 
 // functions
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   font: 100%/1.5 "Helvetica Neue", arial, sans-serif;
 }
 
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    font-weight: normal;
+  }
+
+}
+
+// animations
+
+@keyframes pulse {
+  0% {
+    background-color: $brand-color-alpha;
+  }
+
+  100% {
+    background-color: $brand-color;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    background-color: $brand-color-alpha;
+  }
+
+  100% {
+    background-color: $brand-color;
+  }
+}
+
 
 .grid-7x7 {
-  background: #ccc;
+  * {
+    box-sizing: border-box;
+  }
+
+  position: relative;
+  overflow: hidden;
+  .grid {
+    background: #ccc;
+    animation: fadeIn 3s 1;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: - $grid-gutter/2;
+    margin-left: - $grid-gutter/2;
+
+    .grid-item {
+      padding: $grid-gutter/2;
+      outline: 1px solid $outline-color;
+      flex: 1 1 percentage(1/7);
+
+      &:before {
+        content: "";
+        display: inline-block;
+        padding-bottom: 100%;
+      }
+
+    }
+  }
+}
+
+
+.grid-7x7 {
+  .custom-items {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    .custom-item {
+      background-color: $brand-color;
+      position: absolute;
+      animation: show 10s ease-out 1;
+    }
+  }
+}
+
+.grid-7x7 .custom-items .custom-item{
+  &.top0 {
+    top:0;
+  }
+
+  &.left0 {
+        left:0;
+  }
+
+  &.width7 {
+    width: 100%;
+  }
+  &.height7 {
+    height: 100%;
+  }
+
+  @for $i from 1 through 6 {
+    &.top#{$i} {
+      top: percentage($i/7);
+    }
+    &.left#{$i} {
+      left: percentage($i/7);
+    }
+    &.height#{$i} {
+      height: percentage($i/7);
+    }
+    &.width#{$i} {
+      width: percentage($i/7);
+    }
+  }
+
 }

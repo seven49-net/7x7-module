@@ -1,3 +1,241 @@
-body{font:100%/1.5 "Helvetica Neue", arial, sans-serif}.grid-7x7{background:#ccc}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-/*# sourceMappingURL=app.css.map */
+body {
+  font: 100%/1.5 "Helvetica Neue", arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+}
+
+.container h1 {
+  text-align: center;
+  font-weight: normal;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    background-color: rgba(19, 129, 161, 0.5);
+  }
+  100% {
+    background-color: #1381a1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(19, 129, 161, 0.5);
+  }
+  100% {
+    background-color: #1381a1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    background-color: rgba(19, 129, 161, 0.5);
+  }
+  100% {
+    background-color: #1381a1;
+  }
+}
+
+@keyframes show {
+  0% {
+    background-color: rgba(19, 129, 161, 0.5);
+  }
+  100% {
+    background-color: #1381a1;
+  }
+}
+
+.grid-7x7 {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-7x7 * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.grid-7x7 .grid {
+  background: #ccc;
+  -webkit-animation: fadeIn 3s 1;
+          animation: fadeIn 3s 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-right: -1px;
+  margin-left: -1px;
+}
+
+.grid-7x7 .grid .grid-item {
+  padding: 1px;
+  outline: 1px solid rgba(255, 255, 255, 0.8);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 14.28571%;
+          flex: 1 1 14.28571%;
+}
+
+.grid-7x7 .grid .grid-item:before {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%;
+}
+
+.grid-7x7 .custom-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.grid-7x7 .custom-items .custom-item {
+  background-color: #1381a1;
+  position: absolute;
+  -webkit-animation: show 10s ease-out 1;
+          animation: show 10s ease-out 1;
+}
+
+.grid-7x7 .custom-items .custom-item.top0 {
+  top: 0;
+}
+
+.grid-7x7 .custom-items .custom-item.left0 {
+  left: 0;
+}
+
+.grid-7x7 .custom-items .custom-item.width7 {
+  width: 100%;
+}
+
+.grid-7x7 .custom-items .custom-item.height7 {
+  height: 100%;
+}
+
+.grid-7x7 .custom-items .custom-item.top1 {
+  top: 14.28571%;
+}
+
+.grid-7x7 .custom-items .custom-item.left1 {
+  left: 14.28571%;
+}
+
+.grid-7x7 .custom-items .custom-item.height1 {
+  height: 14.28571%;
+}
+
+.grid-7x7 .custom-items .custom-item.width1 {
+  width: 14.28571%;
+}
+
+.grid-7x7 .custom-items .custom-item.top2 {
+  top: 28.57143%;
+}
+
+.grid-7x7 .custom-items .custom-item.left2 {
+  left: 28.57143%;
+}
+
+.grid-7x7 .custom-items .custom-item.height2 {
+  height: 28.57143%;
+}
+
+.grid-7x7 .custom-items .custom-item.width2 {
+  width: 28.57143%;
+}
+
+.grid-7x7 .custom-items .custom-item.top3 {
+  top: 42.85714%;
+}
+
+.grid-7x7 .custom-items .custom-item.left3 {
+  left: 42.85714%;
+}
+
+.grid-7x7 .custom-items .custom-item.height3 {
+  height: 42.85714%;
+}
+
+.grid-7x7 .custom-items .custom-item.width3 {
+  width: 42.85714%;
+}
+
+.grid-7x7 .custom-items .custom-item.top4 {
+  top: 57.14286%;
+}
+
+.grid-7x7 .custom-items .custom-item.left4 {
+  left: 57.14286%;
+}
+
+.grid-7x7 .custom-items .custom-item.height4 {
+  height: 57.14286%;
+}
+
+.grid-7x7 .custom-items .custom-item.width4 {
+  width: 57.14286%;
+}
+
+.grid-7x7 .custom-items .custom-item.top5 {
+  top: 71.42857%;
+}
+
+.grid-7x7 .custom-items .custom-item.left5 {
+  left: 71.42857%;
+}
+
+.grid-7x7 .custom-items .custom-item.height5 {
+  height: 71.42857%;
+}
+
+.grid-7x7 .custom-items .custom-item.width5 {
+  width: 71.42857%;
+}
+
+.grid-7x7 .custom-items .custom-item.top6 {
+  top: 85.71429%;
+}
+
+.grid-7x7 .custom-items .custom-item.left6 {
+  left: 85.71429%;
+}
+
+.grid-7x7 .custom-items .custom-item.height6 {
+  height: 85.71429%;
+}
+
+.grid-7x7 .custom-items .custom-item.width6 {
+  width: 85.71429%;
+}

@@ -29,10 +29,10 @@ gulp.task('sass', () => {
   process.chdir(process.env.INIT_CWD);
   return gulp
   .src(vars.sassIn)
-  .pipe(sourcemaps.init())
+  //.pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
   .pipe(autoprefixer(vars.autoprefixerOptions))
-  .pipe(sourcemaps.write("./"))
+  //.pipe(sourcemaps.write("./"))
   .pipe(gulp.dest(vars.cssOut))
   .pipe(browserSync.stream());
 });
