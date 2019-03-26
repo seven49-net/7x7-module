@@ -39,7 +39,7 @@ body {
 
 @-webkit-keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: .5;
   }
   100% {
     opacity: 1;
@@ -48,7 +48,7 @@ body {
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: .5;
   }
   100% {
     opacity: 1;
@@ -57,19 +57,25 @@ body {
 
 @-webkit-keyframes show {
   0% {
-    background-color: rgba(19, 129, 161, 0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
   }
   100% {
-    background-color: #1381a1;
+    opacity: 1;
   }
 }
 
 @keyframes show {
   0% {
-    background-color: rgba(19, 129, 161, 0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
   }
   100% {
-    background-color: #1381a1;
+    opacity: 1;
   }
 }
 
@@ -85,8 +91,8 @@ body {
 
 .grid-7x7 .grid {
   background: #ccc;
-  -webkit-animation: fadeIn 3s 1;
-          animation: fadeIn 3s 1;
+  -webkit-animation: fadeIn 2s 1;
+          animation: fadeIn 2s 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,8 +130,8 @@ body {
 .grid-7x7 .custom-items .custom-item {
   background-color: #1381a1;
   position: absolute;
-  -webkit-animation: show 10s ease-out 1;
-          animation: show 10s ease-out 1;
+  -webkit-animation: show 4s ease 1;
+          animation: show 4s ease 1;
 }
 
 .grid-7x7 .custom-items .custom-item.top0 {
@@ -238,4 +244,39 @@ body {
 
 .grid-7x7 .custom-items .custom-item.width6 {
   width: 85.71429%;
+}
+
+.grid-7x7 .custom-item {
+  -webkit-transition: background-color 400ms ease;
+  transition: background-color 400ms ease;
+}
+
+.grid-7x7 .custom-item:hover {
+  background-color: #0d556a;
+  cursor: pointer;
+}
+
+.grid-7x7 .custom-item a {
+  display: block;
+  height: 100%;
+  position: relative;
+  color: #fff;
+}
+
+.grid-7x7 .custom-item a .title {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  white-space: nowrap;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.grid-7x7 .custom-item.text-vertical a .title {
+  -webkit-transform: rotate(-90deg) translate(-50%, -50%);
+          transform: rotate(-90deg) translate(-50%, -50%);
+  -webkit-transform-origin: left top 0;
+          transform-origin: left top 0;
 }
