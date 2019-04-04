@@ -10,21 +10,21 @@ $custom-item-color: #fff !default;
 
 // As hex codes */
 // petrol
-$color-primary-0: #1382A1;  // Main Primary color */
+$color-primary-0: #1382A1; // Main Primary color */
 $color-primary-1: #57A9C1;
 $color-primary-2: #3291AC;
 $color-primary-3: #046884;
 $color-primary-4: #035268;
 
 // blue
-$color-secondary-1-0: #233EB0;  // Main Secondary color (1) */
+$color-secondary-1-0: #233EB0; // Main Secondary color (1) */
 $color-secondary-1-1: #6579CA;
 $color-secondary-1-2: #4259B9;
 $color-secondary-1-3: #112A90;
 $color-secondary-1-4: #0B1F72;
 
 // yellow
-$color-secondary-2-0: #FFB916;  // Main Secondary color (2) */
+$color-secondary-2-0: #FFB916; // Main Secondary color (2) */
 $color-secondary-2-1: #FFD46E;
 $color-secondary-2-2: #FFC744;
 $color-secondary-2-3: #D49500;
@@ -38,42 +38,35 @@ $color-complement-3: #D46B00;
 $color-complement-4: #A75400;
 
 
+$primary-color: $brand-color !default;
+$primary-color-alpha: rgba($primary-color, 0.5) !default;
+
+$secondary-color-1: #233EB0 !default;
+$secondary-color-1-alpha: rgba($secondary-color-1, .5) !default;
+
+$secondary-color-2: #FFB916 !default;
+$secondary-color-2-alpha: rgba($secondary-color-2, .5) !default;
+
+$complementary-color: #FF8C16 !default;
+$complementary-color-alpha: rgba($complementary-color, .5) !default;
 
 // mixins
 
 
 // functions
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  font: 100%/1.5 "Helvetica Neue", arial, sans-serif;
-}
-
-.container {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 20px;
-
-  h1 {
-    text-align: center;
-    font-weight: normal;
-  }
-
-}
 
 // animations
-
 @keyframes pulse {
   0% {
-    background-color: $brand-color-alpha;
+    color: #dcdcdc;
   }
-
+  50% {
+    color: #ababab;
+  }
   100% {
-    background-color: $brand-color;
+    color: #dcdcdc;
   }
 }
 
@@ -81,7 +74,6 @@ body {
   0% {
     opacity: .5;
   }
-
   100% {
     opacity: 1;
   }
@@ -91,23 +83,46 @@ body {
   0% {
     opacity: 0;
   }
-  20% {
+  50% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
 
+.grid-7x7-container {
+  * {
+    box-sizing: border-box;
+  }
+  position: relative;
+  .copyright {
+    position: absolute;
+    color: #aaa;
+    bottom: -30px;
+    z-index: 3000;
+    width: 100%;
+    text-align: center;
+  }
+}
 
 .grid-7x7 {
   * {
     box-sizing: border-box;
   }
 
+
   position: relative;
   overflow: hidden;
+
+  // .copyright {
+  //   position: absolute;
+  //   color: #aaa;
+  //   bottom: -30px;
+  //   z-index: 3000;
+  //   width: 100%;
+  //   text-align: center;
+  // }
   .grid {
     background: #ccc;
     animation: fadeIn 2s 1;
@@ -119,7 +134,8 @@ body {
     .grid-item {
       padding: $grid-gutter/2;
       outline: 1px solid $outline-color;
-      flex: 1 1 percentage(1/7);
+      flex: 0 0 percentage(1/7);
+      position: relative;
 
       &:before {
         content: "";
@@ -127,6 +143,16 @@ body {
         padding-bottom: 100%;
       }
 
+      .counter {
+        transform: translate(-5%, -50%);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        vertical-align: middle;
+        text-align: center;
+        color: #dfdfdf;
+        animation: pulse 5000ms ease infinite;
+      }
     }
   }
 }
@@ -135,31 +161,34 @@ body {
 .grid-7x7 {
   .custom-items {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
+
     .custom-item {
       background-color: $brand-color;
       position: absolute;
-      animation: show 4s ease 1;
+
+      animation: show 12s ease 1;
     }
   }
 }
 
-.grid-7x7 .custom-items .custom-item{
+.grid-7x7 .custom-items .custom-item {
   &.top0 {
-    top:0;
+    top: 0;
   }
 
   &.left0 {
-        left:0;
+    left: 0;
   }
 
   &.width7 {
     width: 100%;
   }
+
   &.height7 {
     height: 100%;
   }
@@ -168,12 +197,15 @@ body {
     &.top#{$i} {
       top: percentage($i/7);
     }
+
     &.left#{$i} {
       left: percentage($i/7);
     }
+
     &.height#{$i} {
       height: percentage($i/7);
     }
+
     &.width#{$i} {
       width: percentage($i/7);
     }
@@ -182,11 +214,13 @@ body {
 }
 
 .grid-7x7 .custom-item {
-  transition: background-color 400ms ease;
+  transition: opacity 400ms ease;
+
   &:hover {
-    background-color: darken($brand-color, 12%);
+    opacity: .7;
     cursor: pointer;
   }
+
   a {
     display: block;
     height: 100%;
@@ -204,10 +238,33 @@ body {
 
     }
   }
+
   &.text-vertical {
     a .title {
-      transform:rotate(-90deg) translate(-50%, -50%);
+      transform: rotate(-90deg) translate(-50%, -50%);
       transform-origin: left top 0;
     }
+  }
+}
+
+.grid-7x7 .custom-item {
+  &.primary-color-bg {
+    background-color: $primary-color !important;
+  }
+
+  &.secondary-color-1-bg {
+    background-color: $secondary-color-1 !important;
+  }
+
+  &.secondary-color-2-bg {
+    background-color: $secondary-color-2 !important;
+  }
+
+  &.secondary-color-1-bg {
+    background-color: $secondary-color-1 !important;
+  }
+
+  &.complementary-color-bg {
+    background-color: $complementary-color !important;
   }
 }

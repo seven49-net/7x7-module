@@ -1,39 +1,24 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font: 100%/1.5 "Helvetica Neue", arial, sans-serif;
-}
-
-.container {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 20px;
-}
-
-.container h1 {
-  text-align: center;
-  font-weight: normal;
-}
-
 @-webkit-keyframes pulse {
   0% {
-    background-color: rgba(19, 129, 161, 0.5);
+    color: #dcdcdc;
+  }
+  50% {
+    color: #ababab;
   }
   100% {
-    background-color: #1381a1;
+    color: #dcdcdc;
   }
 }
 
 @keyframes pulse {
   0% {
-    background-color: rgba(19, 129, 161, 0.5);
+    color: #dcdcdc;
+  }
+  50% {
+    color: #ababab;
   }
   100% {
-    background-color: #1381a1;
+    color: #dcdcdc;
   }
 }
 
@@ -59,7 +44,7 @@ body {
   0% {
     opacity: 0;
   }
-  20% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -71,12 +56,30 @@ body {
   0% {
     opacity: 0;
   }
-  20% {
+  50% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
+}
+
+.grid-7x7-container {
+  position: relative;
+}
+
+.grid-7x7-container * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.grid-7x7-container .copyright {
+  position: absolute;
+  color: #aaa;
+  bottom: -30px;
+  z-index: 3000;
+  width: 100%;
+  text-align: center;
 }
 
 .grid-7x7 {
@@ -107,15 +110,29 @@ body {
 .grid-7x7 .grid .grid-item {
   padding: 1px;
   outline: 1px solid rgba(255, 255, 255, 0.8);
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 14.28571%;
-          flex: 1 1 14.28571%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 14.28571%;
+          flex: 0 0 14.28571%;
+  position: relative;
 }
 
 .grid-7x7 .grid .grid-item:before {
   content: "";
   display: inline-block;
   padding-bottom: 100%;
+}
+
+.grid-7x7 .grid .grid-item .counter {
+  -webkit-transform: translate(-5%, -50%);
+          transform: translate(-5%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  color: #dfdfdf;
+  -webkit-animation: pulse 5000ms ease infinite;
+          animation: pulse 5000ms ease infinite;
 }
 
 .grid-7x7 .custom-items {
@@ -130,8 +147,8 @@ body {
 .grid-7x7 .custom-items .custom-item {
   background-color: #1381a1;
   position: absolute;
-  -webkit-animation: show 4s ease 1;
-          animation: show 4s ease 1;
+  -webkit-animation: show 12s ease 1;
+          animation: show 12s ease 1;
 }
 
 .grid-7x7 .custom-items .custom-item.top0 {
@@ -247,12 +264,12 @@ body {
 }
 
 .grid-7x7 .custom-item {
-  -webkit-transition: background-color 400ms ease;
-  transition: background-color 400ms ease;
+  -webkit-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
 }
 
 .grid-7x7 .custom-item:hover {
-  background-color: #0d556a;
+  opacity: .7;
   cursor: pointer;
 }
 
@@ -279,4 +296,24 @@ body {
           transform: rotate(-90deg) translate(-50%, -50%);
   -webkit-transform-origin: left top 0;
           transform-origin: left top 0;
+}
+
+.grid-7x7 .custom-item.primary-color-bg {
+  background-color: #1381a1 !important;
+}
+
+.grid-7x7 .custom-item.secondary-color-1-bg {
+  background-color: #233EB0 !important;
+}
+
+.grid-7x7 .custom-item.secondary-color-2-bg {
+  background-color: #FFB916 !important;
+}
+
+.grid-7x7 .custom-item.secondary-color-1-bg {
+  background-color: #233EB0 !important;
+}
+
+.grid-7x7 .custom-item.complementary-color-bg {
+  background-color: #FF8C16 !important;
 }
