@@ -44,7 +44,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
     var makeTitle = function(item) {
       var a = item.querySelector("a");
-      return a ? a.innerHTML = "<span class='title'>" + a.innerHTML + "</span>" : '';
+      return a ? a.innerHTML = "<span class='title'>" + a.innerHTML + "</span>" : false;
     };
 
     if (customItems.length) {
