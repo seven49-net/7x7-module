@@ -25,7 +25,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     var item = function(c) {
       var item = document.createElement("div");
       item.innerHTML = "<span class='counter'>" + c + "</span>";
-      item.setAttribute("class", "grid-item");
+      item.setAttribute("class", "grid-item grid-item-" + c);
       return item;
     };
 
@@ -39,7 +39,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         count.innerHTML = counter;
         // recursive
         appendItem();
-      }, 100);
+      }, 50);
     })();
 
     var makeTitle = function(item) {

@@ -147,8 +147,8 @@
 .grid-7x7 .custom-items .custom-item {
   background-color: #1381a1;
   position: absolute;
-  -webkit-animation: show 12s ease 1;
-          animation: show 12s ease 1;
+  -webkit-animation: show 6s ease 1;
+          animation: show 6s ease 1;
 }
 
 .grid-7x7 .custom-items .custom-item.top0 {
