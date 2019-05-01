@@ -266,6 +266,12 @@
 .grid-7x7 .custom-item {
   -webkit-transition: opacity 400ms ease;
   transition: opacity 400ms ease;
+  overflow: auto;
+  color: #fff;
+}
+
+.grid-7x7 .custom-item.reverse-color {
+  color: #000;
 }
 
 .grid-7x7 .custom-item:hover {
@@ -289,6 +295,11 @@
   white-space: nowrap;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.grid-7x7 .custom-item.reverse-color a {
+  color: #000;
 }
 
 .grid-7x7 .custom-item.text-vertical a .title {
@@ -296,6 +307,30 @@
           transform: rotate(-90deg) translate(-50%, -50%);
   -webkit-transform-origin: left top 0;
           transform-origin: left top 0;
+}
+
+.grid-7x7 .custom-item.Text .center-text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  padding: 10px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.grid-7x7 .custom-item.Image .ImageContainer {
+  height: 100%;
+}
+
+.grid-7x7 .custom-item.Image .ImageContainer img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .grid-7x7 .custom-item.primary-color-bg {

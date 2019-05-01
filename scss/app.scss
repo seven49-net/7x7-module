@@ -7,6 +7,7 @@ $brand-color: #1381a1 !default;
 $brand-color-alpha: rgba($brand-color, 0.5) !default;
 
 $custom-item-color: #fff !default;
+$custom-item-color-reverse: #000 !default;
 
 // As hex codes */
 // petrol
@@ -170,7 +171,6 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
     .custom-item {
       background-color: $brand-color;
       position: absolute;
-
       animation: show 6s ease 1;
     }
   }
@@ -215,7 +215,11 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
 
 .grid-7x7 .custom-item {
   transition: opacity 400ms ease;
-
+  overflow: auto;
+  color: $custom-item-color;
+  &.reverse-color {
+    color: $custom-item-color-reverse;
+  }
   &:hover {
     opacity: .7;
     cursor: pointer;
@@ -235,9 +239,14 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
       top: 50%;
       white-space: nowrap;
       transform: translate(-50%, -50%);
-
+      padding: 10px;
     }
   }
+  &.reverse-color a{
+    color: $custom-item-color-reverse;
+  }
+
+
 
   &.text-vertical {
     a .title {
@@ -245,6 +254,33 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
       transform-origin: left top 0;
     }
   }
+
+  &.Text {
+    .center-text {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      padding: 10px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &.Image {
+    .ImageContainer {
+      height: 100%;
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: auto;
+        height: 100%;
+        transform: translate(-50% , 0);
+      }
+    }
+
+  }
+
 }
 
 .grid-7x7 .custom-item {
