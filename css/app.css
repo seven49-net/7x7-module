@@ -274,7 +274,7 @@
   color: #000;
 }
 
-.grid-7x7 .custom-item:hover {
+.grid-7x7 .custom-item:not(.Image):hover {
   opacity: .7;
   cursor: pointer;
 }
@@ -331,6 +331,24 @@
   height: 100%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
+  margin: 0 !important;
+}
+
+.grid-7x7 .custom-item.Image .ImageContainer .image-title {
+  position: absolute;
+  padding: 10px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: .5;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  cursor: pointer;
+}
+
+.grid-7x7 .custom-item.Image:hover .image-title {
+  opacity: 1;
 }
 
 .grid-7x7 .custom-item.primary-color-bg {

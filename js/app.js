@@ -45,11 +45,25 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     var editContent = function (item) {
       var classlist = item.classList;
       if (classlist.contains("Link") || classlist.contains("Download")) {
+
         var a = item.querySelector("a");
         return a ? a.innerHTML = "<span class='title'>" + a.innerHTML + "</span>" : false;
+
       }
       if (classlist.contains("Text")) {
+
         return item.innerHTML = "<div class='center-text'>" + item.innerHTML + "</div>";
+
+      }
+      if (classlist.contains("Image")) {
+
+        var img = item.querySelector("img");
+        var alt = img.getAttribute("alt");
+        var imgTitle = document.createElement("span");
+        imgTitle.setAttribute("class", "image-title");
+        imgTitle.innerHTML = alt;
+
+        return (alt) ? item.querySelector(".ImageContainer").appendChild(imgTitle) : "";
       }
 
     };

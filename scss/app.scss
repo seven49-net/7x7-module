@@ -220,7 +220,7 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
   &.reverse-color {
     color: $custom-item-color-reverse;
   }
-  &:hover {
+  &:not(.Image):hover {
     opacity: .7;
     cursor: pointer;
   }
@@ -269,6 +269,11 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
   &.Image {
     .ImageContainer {
       height: 100%;
+      // a {
+      //   display: block;
+      //   width: 100%;
+      //   height: 100%;
+      // }
       img {
         position: absolute;
         top: 0;
@@ -276,8 +281,23 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
         width: auto;
         height: 100%;
         transform: translate(-50% , 0);
+        margin: 0 !important;
       }
+      .image-title {
+        position: absolute;
+        padding: 10px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .5;
+        transition: opacity 300ms ease;
+        cursor: pointer;
+      }
+
     }
+    &:hover .image-title {
+        opacity: 1;
+      }
 
   }
 
