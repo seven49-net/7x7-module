@@ -51,8 +51,39 @@ $secondary-color-2-alpha: rgba($secondary-color-2, .5) !default;
 $complementary-color: #FF8C16 !default;
 $complementary-color-alpha: rgba($complementary-color, .5) !default;
 
-// mixins
+$breakpoints: (
+  x-small: 0,
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  x-large: 1200px
+) !default;
 
+
+// mixins
+@mixin media($width) {
+   @if map-has-key($breakpoints, $width) {
+    @media (min-width: map-get($breakpoints, $width)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin media-down($width) {
+   @if map-has-key($breakpoints, $width) {
+    @media (max-width: map-get($breakpoints, $width)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $width) {
+      @content;
+    }
+  }
+}
 
 // functions
 
@@ -125,22 +156,25 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
   //   text-align: center;
   // }
   .grid {
-    background: #ccc;
+    background: #ddd;
     animation: fadeIn 2s 1;
     display: flex;
     flex-flow: row wrap;
-    margin-right: - $grid-gutter/2;
-    margin-left: - $grid-gutter/2;
+    // margin-right: - $grid-gutter/2;
+    // margin-left: - $grid-gutter/2;
 
     .grid-item {
-      padding: $grid-gutter/2;
-      outline: 1px solid $outline-color;
+      //padding: $grid-gutter/2;
+      //outline: 1px solid $outline-color;
       flex: 0 0 percentage(1/7);
       position: relative;
-
+      //background: rgba(#ccc, 0.8);
+      &:nth-child(2n + 1) {
+        background: rgba(#000, 0.05);
+      }
       &:before {
         content: "";
-        display: inline-block;
+        display: block;
         padding-bottom: 100%;
       }
 
@@ -267,13 +301,21 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
   }
 
   &.Image {
-    .ImageContainer {
+    .wrapper {
+      display: block;
       height: 100%;
-      // a {
-      //   display: block;
-      //   width: 100%;
-      //   height: 100%;
-      // }
+      width: 100%;
+      position: relative;
+      text-decoration: none;
+    }
+    .image {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left:0;
+      opacity: 1;
+      transition: opacity 1000ms ease;
       img {
         position: absolute;
         top: 0;
@@ -283,21 +325,68 @@ $complementary-color-alpha: rgba($complementary-color, .5) !default;
         transform: translate(-50% , 0);
         margin: 0 !important;
       }
-      .image-title {
-        position: absolute;
-        padding: 10px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        opacity: .5;
-        transition: opacity 300ms ease;
-        cursor: pointer;
-      }
+      // .image-title {
+      //   position: absolute;
+      //   padding: 10px;
+      //   left: 50%;
+      //   top: 50%;
+      //   transform: translate(-50%, -50%);
+      //   opacity: 0;
+      //   transition: opacity 300ms ease;
+      //   cursor: pointer;
+      // }
 
     }
-    &:hover .image-title {
+    .text {
+      width: 100%;
+      position: absolute;
+      padding: 10px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 500ms ease;
+      // transform: translate(0, - 50%);
+      // top: 50%;
+
+
+
+
+      .image-title {
+        display: block;
+        font-size: .825rem;
+      }
+      .text-title {
+        display: none;
+        font-size: 1rem;
+      }
+      .text-text {
+        display: none;
+        font-size: .825rem;
+        margin-top: 1rem;
+        p {
+          margin: 0;
+        }
+      }
+
+      @include media(md) {
+        .image-title,
+        .text-title {
+          font-size: 1rem;
+          display: block;
+        }
+        .text-text {
+          display: block;
+        }
+      }
+    }
+    .wrapper:hover {
+      .image {
+        opacity: 0;
+      }
+      .text {
         opacity: 1;
       }
+    }
 
   }
 

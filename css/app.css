@@ -93,7 +93,7 @@
 }
 
 .grid-7x7 .grid {
-  background: #ccc;
+  background: #ddd;
   -webkit-animation: fadeIn 2s 1;
           animation: fadeIn 2s 1;
   display: -webkit-box;
@@ -103,22 +103,22 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  margin-right: -1px;
-  margin-left: -1px;
 }
 
 .grid-7x7 .grid .grid-item {
-  padding: 1px;
-  outline: 1px solid rgba(255, 255, 255, 0.8);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 14.28571%;
           flex: 0 0 14.28571%;
   position: relative;
 }
 
+.grid-7x7 .grid .grid-item:nth-child(2n + 1) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .grid-7x7 .grid .grid-item:before {
   content: "";
-  display: inline-block;
+  display: block;
   padding-bottom: 100%;
 }
 
@@ -319,11 +319,26 @@
           transform: translate(0, -50%);
 }
 
-.grid-7x7 .custom-item.Image .ImageContainer {
+.grid-7x7 .custom-item.Image .wrapper {
+  display: block;
   height: 100%;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
 }
 
-.grid-7x7 .custom-item.Image .ImageContainer img {
+.grid-7x7 .custom-item.Image .image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: opacity 1000ms ease;
+  transition: opacity 1000ms ease;
+}
+
+.grid-7x7 .custom-item.Image .image img {
   position: absolute;
   top: 0;
   left: 50%;
@@ -334,20 +349,53 @@
   margin: 0 !important;
 }
 
-.grid-7x7 .custom-item.Image .ImageContainer .image-title {
+.grid-7x7 .custom-item.Image .text {
+  width: 100%;
   position: absolute;
   padding: 10px;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  opacity: .5;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  cursor: pointer;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
 }
 
-.grid-7x7 .custom-item.Image:hover .image-title {
+.grid-7x7 .custom-item.Image .text .image-title {
+  display: block;
+  font-size: .825rem;
+}
+
+.grid-7x7 .custom-item.Image .text .text-title {
+  display: none;
+  font-size: 1rem;
+}
+
+.grid-7x7 .custom-item.Image .text .text-text {
+  display: none;
+  font-size: .825rem;
+  margin-top: 1rem;
+}
+
+.grid-7x7 .custom-item.Image .text .text-text p {
+  margin: 0;
+}
+
+@media (min-width: md) {
+  .grid-7x7 .custom-item.Image .text .image-title,
+  .grid-7x7 .custom-item.Image .text .text-title {
+    font-size: 1rem;
+    display: block;
+  }
+  .grid-7x7 .custom-item.Image .text .text-text {
+    display: block;
+  }
+}
+
+.grid-7x7 .custom-item.Image .wrapper:hover .image {
+  opacity: 0;
+}
+
+.grid-7x7 .custom-item.Image .wrapper:hover .text {
   opacity: 1;
 }
 

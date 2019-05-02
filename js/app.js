@@ -57,13 +57,45 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       }
       if (classlist.contains("Image")) {
 
+        var href = item.querySelector("a") ? item.querySelector("a").getAttribute("href") : "";
+        var title = item.querySelector("h3") ? item.querySelector("h3").innerHTML : null;
+        var txt = item.querySelector(".ImageText") ? item.querySelector(".ImageText").innerHTML : null;
+
         var img = item.querySelector("img");
         var alt = img.getAttribute("alt");
         var imgTitle = document.createElement("span");
         imgTitle.setAttribute("class", "image-title");
         imgTitle.innerHTML = alt;
 
-        return (alt) ? item.querySelector(".ImageContainer").appendChild(imgTitle) : "";
+        var wrap = document.createElement("div");
+
+        if (href) {
+          wrap = document.createElement("a");
+          wrap.setAttribute("href", href);
+        }
+        wrap.setAttribute("class", "wrapper");
+        var image = document.createElement("div");
+        image.setAttribute("class", "image");
+        image.appendChild(img);
+        wrap.appendChild(image);
+
+        var text = document.createElement("div");
+        text.setAttribute("class", "text");
+        text.appendChild(imgTitle);
+        if (title) {
+          var t = document.createElement("span");
+          t.setAttribute("class", "text-title");
+          t.innerHTML = title;
+          text.appendChild(t);
+        }
+        if (txt) {
+          var tt = document.createElement("div");
+          tt.setAttribute("class", "text-text");
+          tt.innerHTML = txt;
+          text.appendChild(tt);
+        }
+        wrap.appendChild(text);
+        return item.innerHTML = wrap.outerHTML;
       }
 
     };
