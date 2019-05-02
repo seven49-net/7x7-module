@@ -123,8 +123,8 @@
 }
 
 .grid-7x7 .grid .grid-item .counter {
-  -webkit-transform: translate(-5%, -50%);
-          transform: translate(-5%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   position: absolute;
@@ -380,7 +380,7 @@
   margin: 0;
 }
 
-@media (min-width: md) {
+@media (min-width: 768px) {
   .grid-7x7 .custom-item.Image .text .image-title,
   .grid-7x7 .custom-item.Image .text .text-title {
     font-size: 1rem;

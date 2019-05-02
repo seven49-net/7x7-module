@@ -179,7 +179,7 @@ $breakpoints: (
       }
 
       .counter {
-        transform: translate(-5%, -50%);
+        transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
         position: absolute;
@@ -368,7 +368,7 @@ $breakpoints: (
         }
       }
 
-      @include media(md) {
+      @include media(medium) {
         .image-title,
         .text-title {
           font-size: 1rem;
