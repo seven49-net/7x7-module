@@ -51,22 +51,22 @@ $secondary-color-2-alpha: rgba($secondary-color-2, .5) !default;
 $complementary-color: #FF8C16 !default;
 $complementary-color-alpha: rgba($complementary-color, .5) !default;
 
-$breakpoints: (
-  x-small: 0,
+$breakpoints: (x-small: 0,
   small: 576px,
   medium: 768px,
   large: 992px,
-  x-large: 1200px
-) !default;
+  x-large: 1200px) !default;
 
 
 // mixins
 @mixin media($width) {
-   @if map-has-key($breakpoints, $width) {
+  @if map-has-key($breakpoints, $width) {
     @media (min-width: map-get($breakpoints, $width)) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @media (min-width: $width) {
       @content;
     }
@@ -74,11 +74,13 @@ $breakpoints: (
 }
 
 @mixin media-down($width) {
-   @if map-has-key($breakpoints, $width) {
+  @if map-has-key($breakpoints, $width) {
     @media (max-width: map-get($breakpoints, $width)) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @media (max-width: $width) {
       @content;
     }
@@ -94,9 +96,11 @@ $breakpoints: (
   0% {
     color: #dcdcdc;
   }
+
   50% {
     color: #ababab;
   }
+
   100% {
     color: #dcdcdc;
   }
@@ -106,6 +110,7 @@ $breakpoints: (
   0% {
     opacity: .5;
   }
+
   100% {
     opacity: 1;
   }
@@ -115,9 +120,11 @@ $breakpoints: (
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -127,7 +134,9 @@ $breakpoints: (
   * {
     box-sizing: border-box;
   }
+
   position: relative;
+
   .copyright {
     position: absolute;
     color: #aaa;
@@ -168,10 +177,12 @@ $breakpoints: (
       //outline: 1px solid $outline-color;
       flex: 0 0 percentage(1/7);
       position: relative;
+
       //background: rgba(#ccc, 0.8);
       &:nth-child(2n + 1) {
         background: rgba(#000, 0.05);
       }
+
       &:before {
         content: "";
         display: block;
@@ -210,6 +221,7 @@ $breakpoints: (
   }
 }
 
+// positioning
 .grid-7x7 .custom-items .custom-item {
   &.top0 {
     top: 0;
@@ -249,11 +261,20 @@ $breakpoints: (
 
 .grid-7x7 .custom-item {
   transition: opacity 400ms ease;
-  overflow: auto;
   color: $custom-item-color;
+
+  &:not(.Image) {
+    overflow: auto;
+  }
+  // image object
+  &.Image {
+    overflow: hidden;
+  }
+
   &.reverse-color {
     color: $custom-item-color-reverse;
   }
+
   &:not(.Image):hover {
     opacity: .7;
     cursor: pointer;
@@ -276,11 +297,10 @@ $breakpoints: (
       padding: 10px;
     }
   }
-  &.reverse-color a{
+
+  &.reverse-color a {
     color: $custom-item-color-reverse;
   }
-
-
 
   &.text-vertical {
     a .title {
@@ -308,23 +328,26 @@ $breakpoints: (
       position: relative;
       text-decoration: none;
     }
+
     .image {
       height: 100%;
       width: 100%;
       position: absolute;
       top: 0;
-      left:0;
+      left: 0;
       opacity: 1;
       transition: opacity 1000ms ease;
+
       img {
         position: absolute;
         top: 0;
         left: 50%;
         width: auto;
         height: 100%;
-        transform: translate(-50% , 0);
+        transform: translate(-50%, 0);
         margin: 0 !important;
       }
+
       // .image-title {
       //   position: absolute;
       //   padding: 10px;
@@ -337,6 +360,7 @@ $breakpoints: (
       // }
 
     }
+
     .text {
       width: 100%;
       position: absolute;
@@ -348,41 +372,45 @@ $breakpoints: (
       // transform: translate(0, - 50%);
       // top: 50%;
 
-
-
-
       .image-title {
         display: block;
         font-size: .825rem;
       }
+
       .text-title {
         display: none;
         font-size: 1rem;
       }
+
       .text-text {
         display: none;
         font-size: .825rem;
         margin-top: 1rem;
+
         p {
           margin: 0;
         }
       }
 
       @include media(medium) {
+
         .image-title,
         .text-title {
           font-size: 1rem;
           display: block;
         }
+
         .text-text {
           display: block;
         }
       }
     }
+
     .wrapper:hover {
       .image {
         opacity: 0;
       }
+
       .text {
         opacity: 1;
       }

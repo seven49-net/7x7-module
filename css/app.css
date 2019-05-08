@@ -266,8 +266,15 @@
 .grid-7x7 .custom-item {
   -webkit-transition: opacity 400ms ease;
   transition: opacity 400ms ease;
-  overflow: auto;
   color: #fff;
+}
+
+.grid-7x7 .custom-item:not(.Image) {
+  overflow: auto;
+}
+
+.grid-7x7 .custom-item.Image {
+  overflow: hidden;
 }
 
 .grid-7x7 .custom-item.reverse-color {
