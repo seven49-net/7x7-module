@@ -3,7 +3,7 @@ $grid-gutter: 2px !default;
 $outline-color: rgba(#fff, 0.8ns) !default;
 
 
-$brand-color: #1381a1 !default;
+$brand-color: #035268 !default; //#1381a1 !default;
 $brand-color-alpha: rgba($brand-color, 0.5) !default;
 
 $custom-item-color: #fff !default;
@@ -42,14 +42,26 @@ $color-complement-4: #A75400;
 $primary-color: $brand-color !default;
 $primary-color-alpha: rgba($primary-color, 0.5) !default;
 
-$secondary-color-1: #233EB0 !default;
+$primary-bg-color: $primary-color !default;
+$primary-text-color: $custom-item-color !default;
+
+//
+$secondary-color-1: #0B1F72 !default; // #233EB0
 $secondary-color-1-alpha: rgba($secondary-color-1, .5) !default;
+$secondary-1-bg-color: $secondary-color-1 !default;
+$secondary-1-text-color: $custom-item-color !default;
 
-$secondary-color-2: #FFB916 !default;
+
+//
+$secondary-color-2: #FFD46E !default; // #FFB916
 $secondary-color-2-alpha: rgba($secondary-color-2, .5) !default;
+$secondary-2-bg-color: $secondary-color-2 !default;
+$secondary-2-text-color: $custom-item-color-reverse !default;
 
-$complementary-color: #FF8C16 !default;
+$complementary-color: #FFB76E !default; // #FF8C16
 $complementary-color-alpha: rgba($complementary-color, .5) !default;
+$complementary-bg-color: $complementary-color !default;
+$complementary-text-color: $custom-item-color-reverse !default;
 
 $breakpoints: (x-small: 0,
   small: 576px,
@@ -87,8 +99,21 @@ $breakpoints: (x-small: 0,
   }
 }
 
-// functions
+@mixin set-colors($bg, $txt) {
+  background-color: $bg !important;
+  color: $txt !important;
 
+  a {
+    color: $txt !important;
+    &:active,
+    &:hover,
+    &:visited {
+      color: $txt !important;
+    }
+  }
+}
+
+// functions
 
 
 // animations
@@ -156,29 +181,16 @@ $breakpoints: (x-small: 0,
   position: relative;
   overflow: hidden;
 
-  // .copyright {
-  //   position: absolute;
-  //   color: #aaa;
-  //   bottom: -30px;
-  //   z-index: 3000;
-  //   width: 100%;
-  //   text-align: center;
-  // }
   .grid {
     background: #ddd;
     animation: fadeIn 2s 1;
     display: flex;
     flex-flow: row wrap;
-    // margin-right: - $grid-gutter/2;
-    // margin-left: - $grid-gutter/2;
 
     .grid-item {
-      //padding: $grid-gutter/2;
-      //outline: 1px solid $outline-color;
       flex: 0 0 percentage(1/7);
       position: relative;
 
-      //background: rgba(#ccc, 0.8);
       &:nth-child(2n + 1) {
         background: rgba(#000, 0.05);
       }
@@ -214,12 +226,33 @@ $breakpoints: (x-small: 0,
     z-index: 2;
 
     .custom-item {
-      background-color: $brand-color;
+      background-color: $primary-bg-color;
+      color: $primary-text-color;
       position: absolute;
       animation: show 6s ease 1;
+
+      a,
+      a:active,
+      a:hover,
+      a:visited {
+        color: $primary-text-color;
+      }
     }
   }
 }
+
+.custom-item {
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: $primary-text-color;
+  }
+}
+
 
 // positioning
 .grid-7x7 .custom-items .custom-item {
@@ -266,6 +299,7 @@ $breakpoints: (x-small: 0,
   &:not(.Image) {
     overflow: auto;
   }
+
   // image object
   &.Image {
     overflow: hidden;
@@ -284,7 +318,6 @@ $breakpoints: (x-small: 0,
     display: block;
     height: 100%;
     position: relative;
-    color: $custom-item-color;
 
     .title {
       display: inline-block;
@@ -298,9 +331,9 @@ $breakpoints: (x-small: 0,
     }
   }
 
-  &.reverse-color a {
-    color: $custom-item-color-reverse;
-  }
+  // &.reverse-color a {
+  //   color: $custom-item-color-reverse;
+  // }
 
   &.text-vertical {
     a .title {
@@ -422,22 +455,25 @@ $breakpoints: (x-small: 0,
 
 .grid-7x7 .custom-item {
   &.primary-color-bg {
-    background-color: $primary-color !important;
+    @include set-colors($primary-bg-color, $primary-text-color);
   }
 
   &.secondary-color-1-bg {
-    background-color: $secondary-color-1 !important;
+    // background-color: $secondary-color-1 !important;
+    @include set-colors($secondary-1-bg-color, $secondary-1-text-color);
   }
 
   &.secondary-color-2-bg {
-    background-color: $secondary-color-2 !important;
+    @include set-colors($secondary-2-bg-color, $secondary-2-text-color);
   }
 
-  &.secondary-color-1-bg {
-    background-color: $secondary-color-1 !important;
-  }
+  // &.secondary-color-1-bg {
+  //   // background-color: $secondary-color-1 !important;
+  //   @include set-colors($secondary-1-bg-color, $secondary-1-text-color );
+  // }
 
   &.complementary-color-bg {
     background-color: $complementary-color !important;
+    @include set-colors($complementary-bg-color, $complementary-text-color);
   }
 }
