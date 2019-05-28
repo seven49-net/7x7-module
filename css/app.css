@@ -145,7 +145,7 @@
 }
 
 .grid-7x7 .custom-items .custom-item {
-  background-color: #007A9C;
+  background-color: #1381a1;
   color: #fff;
   position: absolute;
   -webkit-animation: show 6s ease 1;
@@ -160,7 +160,7 @@
 }
 
 .custom-item {
-  background-color: #007A9C;
+  background-color: #1381a1;
   color: #fff;
 }
 
@@ -422,7 +422,7 @@
 }
 
 .grid-7x7 .custom-item.primary-color-bg {
-  background-color: #007A9C !important;
+  background-color: #1381a1 !important;
   color: #fff !important;
 }
 
@@ -435,7 +435,7 @@
 }
 
 .grid-7x7 .custom-item.secondary-color-1-bg {
-  background-color: #0B1F72 !important;
+  background-color: #4B585C !important;
   color: #fff !important;
 }
 
@@ -448,21 +448,21 @@
 }
 
 .grid-7x7 .custom-item.secondary-color-2-bg {
-  background-color: #FFD46E !important;
-  color: #000 !important;
+  background-color: #373330 !important;
+  color: #fff !important;
 }
 
 .grid-7x7 .custom-item.secondary-color-2-bg a {
-  color: #000 !important;
+  color: #fff !important;
 }
 
 .grid-7x7 .custom-item.secondary-color-2-bg a:active, .grid-7x7 .custom-item.secondary-color-2-bg a:hover, .grid-7x7 .custom-item.secondary-color-2-bg a:visited {
-  color: #000 !important;
+  color: #fff !important;
 }
 
 .grid-7x7 .custom-item.complementary-color-bg {
-  background-color: #FFB76E !important;
-  background-color: #FFB76E !important;
+  background-color: #B4B4B4 !important;
+  background-color: #B4B4B4 !important;
   color: #000 !important;
 }
 

@@ -3,7 +3,7 @@ $grid-gutter: 2px !default;
 $outline-color: rgba(#fff, 0.8ns) !default;
 
 
-$brand-color: #007A9C !default; //#1381a1 !default;
+$brand-color: #1381a1 !default; // #007A9C !default;
 $brand-color-alpha: rgba($brand-color, 0.5) !default;
 
 $custom-item-color: #fff !default;
@@ -46,19 +46,19 @@ $primary-bg-color: $primary-color !default;
 $primary-text-color: $custom-item-color !default;
 
 //
-$secondary-color-1: #0B1F72 !default; // #233EB0
+$secondary-color-1: #4B585C !default; //#0B1F72 #233EB0
 $secondary-color-1-alpha: rgba($secondary-color-1, .5) !default;
 $secondary-1-bg-color: $secondary-color-1 !default;
 $secondary-1-text-color: $custom-item-color !default;
 
 
 //
-$secondary-color-2: #FFD46E !default; // #FFB916
+$secondary-color-2: #373330 !default; // #FFD46E #FFB916
 $secondary-color-2-alpha: rgba($secondary-color-2, .5) !default;
 $secondary-2-bg-color: $secondary-color-2 !default;
-$secondary-2-text-color: $custom-item-color-reverse !default;
+$secondary-2-text-color: $custom-item-color !default;
 
-$complementary-color: #FFB76E !default; // #FF8C16
+$complementary-color: #B4B4B4 !default; //#FFB76E #FF8C16
 $complementary-color-alpha: rgba($complementary-color, .5) !default;
 $complementary-bg-color: $complementary-color !default;
 $complementary-text-color: $custom-item-color-reverse !default;
