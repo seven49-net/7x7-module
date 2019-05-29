@@ -21,6 +21,12 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     var counter = 0;
     var limit = 49;
 
+    var html = document.querySelector("html");
+
+    if (html.classList.contains("page-entwurf-1")) {
+      html.classList.add("references");
+    }
+
     // build item
     var item = function (c) {
       var item = document.createElement("div");
@@ -102,13 +108,6 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
     if (customItems.length) {
       customItems.forEach(editContent);
-
-      // for (var i = 0; i < customItemsCount; i++) {
-      //   var a = customItems[i].querySelector("a");
-      //   if (a) {
-      //     a.innerHTML = "<span class='title'>" + a.innerHTML + "</span>";
-      //   }
-      // }
     }
 
 

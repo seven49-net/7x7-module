@@ -462,7 +462,6 @@
 
 .grid-7x7 .custom-item.complementary-color-bg {
   background-color: #B4B4B4 !important;
-  background-color: #B4B4B4 !important;
   color: #000 !important;
 }
 
@@ -471,5 +470,41 @@
 }
 
 .grid-7x7 .custom-item.complementary-color-bg a:active, .grid-7x7 .custom-item.complementary-color-bg a:hover, .grid-7x7 .custom-item.complementary-color-bg a:visited {
+  color: #000 !important;
+}
+
+.page-entwurf-1,
+.references .grid-7x7 .custom-item {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+
+.page-entwurf-1 .image img,
+.references .grid-7x7 .custom-item .image img {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-entwurf-1 a:hover,
+.references .grid-7x7 .custom-item a:hover {
+  color: #000 !important;
+}
+
+.page-entwurf-1.primary-color-bg, .page-entwurf-1.secondary-color-1-bg, .page-entwurf-1.secondary-color-2-bg, .page-entwurf-1.complementary-color-bg,
+.references .grid-7x7 .custom-item.primary-color-bg,
+.references .grid-7x7 .custom-item.secondary-color-1-bg,
+.references .grid-7x7 .custom-item.secondary-color-2-bg,
+.references .grid-7x7 .custom-item.complementary-color-bg {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+
+.page-entwurf-1.primary-color-bg a:hover, .page-entwurf-1.secondary-color-1-bg a:hover, .page-entwurf-1.secondary-color-2-bg a:hover, .page-entwurf-1.complementary-color-bg a:hover,
+.references .grid-7x7 .custom-item.primary-color-bg a:hover,
+.references .grid-7x7 .custom-item.secondary-color-1-bg a:hover,
+.references .grid-7x7 .custom-item.secondary-color-2-bg a:hover,
+.references .grid-7x7 .custom-item.complementary-color-bg a:hover {
   color: #000 !important;
 }

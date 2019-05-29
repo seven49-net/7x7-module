@@ -473,7 +473,33 @@ $breakpoints: (x-small: 0,
   // }
 
   &.complementary-color-bg {
-    background-color: $complementary-color !important;
+
     @include set-colors($complementary-bg-color, $complementary-text-color);
+  }
+}
+
+// experimental
+.page-entwurf-1,
+.references .grid-7x7 .custom-item {
+  .image img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    box-shadow: 1px 1px 4px rgba(#000, 0.5); // maybe ?
+  }
+  color: $custom-item-color-reverse !important;
+    background-color: transparent !important;
+    a:hover {
+      color: $custom-item-color-reverse !important;
+    }
+
+  &.primary-color-bg,
+  &.secondary-color-1-bg,
+  &.secondary-color-2-bg,
+  &.complementary-color-bg {
+    color: $custom-item-color-reverse !important;
+    background-color: transparent !important;
+    a:hover {
+      color: $custom-item-color-reverse !important;
+    }
   }
 }
