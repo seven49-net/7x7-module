@@ -384,28 +384,39 @@
 
 .grid-7x7 .custom-item.Image .text .image-title {
   display: block;
-  font-size: .825rem;
+  font-size: .9rem;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .grid-7x7 .custom-item.Image .text .text-title {
   display: none;
-  font-size: 1rem;
+  font-size: .825rem;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: bold;
 }
 
 .grid-7x7 .custom-item.Image .text .text-text {
   display: none;
-  font-size: .825rem;
-  margin-top: 1rem;
+  font-size: .75rem;
+  margin-top: .125rem;
 }
 
 .grid-7x7 .custom-item.Image .text .text-text p {
   margin: 0;
 }
 
+.grid-7x7 .custom-item.Image .text .text-text ul {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+}
+
 @media (min-width: 768px) {
   .grid-7x7 .custom-item.Image .text .image-title,
   .grid-7x7 .custom-item.Image .text .text-title {
-    font-size: 1rem;
     display: block;
   }
   .grid-7x7 .custom-item.Image .text .text-text {

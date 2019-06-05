@@ -407,21 +407,32 @@ $breakpoints: (x-small: 0,
 
       .image-title {
         display: block;
-        font-size: .825rem;
+        font-size: .9rem;
+        margin: 0;
+        line-height: 1.4;
+        font-weight: bold;
+        text-transform: uppercase;
       }
 
       .text-title {
         display: none;
-        font-size: 1rem;
+        font-size: .825rem;
+        margin: 0;
+        line-height: 1.4;
+        font-weight: bold;
       }
 
       .text-text {
         display: none;
-        font-size: .825rem;
-        margin-top: 1rem;
+        font-size: .75rem;
+        margin-top: .125rem;
 
         p {
           margin: 0;
+        }
+        ul {
+          margin: 0;
+          padding: 0 0 0 1.2rem;
         }
       }
 
@@ -429,7 +440,7 @@ $breakpoints: (x-small: 0,
 
         .image-title,
         .text-title {
-          font-size: 1rem;
+          // font-size: 1rem;
           display: block;
         }
 
