@@ -46,7 +46,8 @@ gulp.task('browsersync', () => {
     server: {
       baseDir: "./",
       index: ["index.htm", "index.html"]
-    }
+    },
+    browser: "google chrome canary"
   });
 });
 

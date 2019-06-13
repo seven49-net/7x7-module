@@ -374,7 +374,7 @@
 .grid-7x7 .custom-item.Image .text {
   width: 100%;
   position: absolute;
-  padding: 10px;
+  padding: 5%;
   top: 0;
   left: 0;
   opacity: 0;
@@ -384,11 +384,17 @@
 
 .grid-7x7 .custom-item.Image .text .image-title {
   display: block;
-  font-size: .9rem;
+  font-size: .6rem;
   margin: 0;
   line-height: 1.4;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+@media (min-width: 576px) {
+  .grid-7x7 .custom-item.Image .text .image-title {
+    font-size: .8rem;
+  }
 }
 
 .grid-7x7 .custom-item.Image .text .text-title {
@@ -518,4 +524,59 @@
 .references .grid-7x7 .custom-item.secondary-color-2-bg a:hover,
 .references .grid-7x7 .custom-item.complementary-color-bg a:hover {
   color: #000 !important;
+}
+
+.page-entwurf-1.height1 .text-text,
+.references .grid-7x7 .custom-item.height1 .text-text {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .page-entwurf-1.height1 .text-text,
+  .references .grid-7x7 .custom-item.height1 .text-text {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-entwurf-1.height2 .image-title,
+  .references .grid-7x7 .custom-item.height2 .image-title {
+    margin-bottom: .25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-entwurf-1.height2 .text-title,
+  .references .grid-7x7 .custom-item.height2 .text-title {
+    margin-bottom: 1rem;
+  }
+}
+
+.page-entwurf-1.height2 .text-text,
+.references .grid-7x7 .custom-item.height2 .text-text {
+  display: block;
+}
+
+.page-entwurf-1.height2 .text-text ul li,
+.references .grid-7x7 .custom-item.height2 .text-text ul li {
+  display: none;
+}
+
+.page-entwurf-1.height2 .text-text ul li:nth-child(1),
+.references .grid-7x7 .custom-item.height2 .text-text ul li:nth-child(1) {
+  display: list-item;
+}
+
+@media (min-width: 768px) {
+  .page-entwurf-1.height2 .text-text ul li:nth-child(2),
+  .references .grid-7x7 .custom-item.height2 .text-text ul li:nth-child(2) {
+    display: list-item;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-entwurf-1.height2 .text-text ul li,
+  .references .grid-7x7 .custom-item.height2 .text-text ul li {
+    display: list-item;
+  }
 }
