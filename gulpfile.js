@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var include       = require("gulp-codekit");
+
 var minify = require('gulp-minify');
 var del = require("del");
 
