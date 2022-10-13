@@ -1,13 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var browserSync = require('browser-sync').create();
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-
-var minify = require('gulp-minify');
-var del = require("del");
 
 var vars = {
 
@@ -71,4 +63,3 @@ gulp.task('watch', gulp.parallel('browsersync', 'sass', () => {
   gulp.watch('./js/**/*.js', gulp.series("reload"));
   gulp.watch('./vendor/**/*.js', gulp.series("reload"));
 }));
-
